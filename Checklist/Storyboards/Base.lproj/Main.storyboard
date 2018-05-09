@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q6H-ud-hJl">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="6H7-UA-jbR">
+            <objects>
+                <navigationController id="q6H-ud-hJl" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="i4k-ad-vFl">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.2666666667" green="0.62352941179999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Rh1-HB-OP3" kind="relationship" relationship="rootViewController" id="DJN-Pe-O3u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="azt-dR-QcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662" y="616"/>
+        </scene>
+        <!--Checklist Table View Controller-->
+        <scene sceneID="8OC-Al-kmt">
+            <objects>
+                <tableViewController storyboardIdentifier="ChecklistTableViewController" id="h28-UB-8Ty" customClass="ChecklistTableViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kA2-aD-u1x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="h28-UB-8Ty" id="5bo-ea-vN4"/>
+                            <outlet property="delegate" destination="h28-UB-8Ty" id="ehW-g2-ppv"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="viewModel" destination="SNX-k5-agi" id="bUf-EB-Rpq"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lq0-11-eqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="SNX-k5-agi" customClass="ChecklistTableViewModel" customModule="Checklist" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="71" y="1607"/>
+        </scene>
+        <!--Add Checklist View Controller-->
+        <scene sceneID="yxE-5L-U7S">
+            <objects>
+                <viewController storyboardIdentifier="AddChecklistViewController" id="fxs-yy-0x1" customClass="AddChecklistViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vgx-ne-tH5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MF9-fX-BaC">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="fxs-yy-0x1" id="Vfg-m4-TtI"/>
+                                    <outlet property="delegate" destination="fxs-yy-0x1" id="5XQ-D8-f9m"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MF9-fX-BaC" firstAttribute="top" secondItem="nxt-RU-Ww8" secondAttribute="top" id="GjM-HY-hNg"/>
+                            <constraint firstItem="nxt-RU-Ww8" firstAttribute="trailing" secondItem="MF9-fX-BaC" secondAttribute="trailing" id="Yvh-Do-asR"/>
+                            <constraint firstItem="nxt-RU-Ww8" firstAttribute="bottom" secondItem="MF9-fX-BaC" secondAttribute="bottom" id="mCH-qF-nSd"/>
+                            <constraint firstItem="MF9-fX-BaC" firstAttribute="leading" secondItem="nxt-RU-Ww8" secondAttribute="leading" id="nYR-li-ULS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nxt-RU-Ww8"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableChecklist" destination="MF9-fX-BaC" id="aES-g6-4g4"/>
+                        <outlet property="viewModel" destination="EFJ-to-CXI" id="8x3-Dm-lX4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kzk-au-uFv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="EFJ-to-CXI" customClass="AddChecklistViewModel" customModule="Checklist" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="2344"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eJ2-cg-hma">
+            <objects>
+                <viewController id="9wB-bP-gCa" customClass="ViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Kn-a7-Nct">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="XT4-ZD-WN9"/>
+                    </view>
+                    <connections>
+                        <outlet property="viewModel" destination="D9K-dL-r24" id="5uA-il-xd1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lCK-mL-kQ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="D9K-dL-r24" customClass="ViewModel" customModule="Checklist" customModuleProvider="target">
+                    <connections>
+                        <outlet property="client" destination="3r1-x7-Lo3" id="KLJ-Yx-AVk"/>
+                    </connections>
+                </customObject>
+                <customObject id="3r1-x7-Lo3" customClass="ApiClient" customModule="Checklist" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="-409" y="3088"/>
+        </scene>
+        <!--Reminder Table View Controller-->
+        <scene sceneID="Q7e-wl-om7">
+            <objects>
+                <tableViewController storyboardIdentifier="ReminderTableViewController" id="7OE-TQ-3sh" customClass="ReminderTableViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Cxe-Pr-36y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="7OE-TQ-3sh" id="2Rv-GW-nh9"/>
+                            <outlet property="delegate" destination="7OE-TQ-3sh" id="Pq1-WT-1si"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="viewModel" destination="acR-VJ-DLl" id="wvH-db-Fh7"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Djc-uo-HhC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="acR-VJ-DLl" customClass="ReminderViewModel" customModule="Checklist" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="1089" y="1606"/>
+        </scene>
+        <!--Checklist View Controller-->
+        <scene sceneID="Ob0-37-TxY">
+            <objects>
+                <viewController id="Rh1-HB-OP3" customClass="ChecklistViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4FO-v1-w6u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sGn-FC-Lqj">
+                                <rect key="frame" x="87.5" y="10" width="200" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="hd4-BK-EJG"/>
+                                    <constraint firstAttribute="width" constant="200" id="sML-0R-vb0"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Checklist"/>
+                                    <segment title="Reminders"/>
+                                </segments>
+                                <color key="tintColor" red="0.2666666667" green="0.62352941179999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentValueChangedWithSender:" destination="Rh1-HB-OP3" eventType="valueChanged" id="AYj-wh-Ojd"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiX-2K-dmL">
+                                <rect key="frame" x="10" y="65" width="355" height="538"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EbP-7K-1PJ" customClass="Floaty" customModule="Floaty">
+                                <rect key="frame" x="305" y="533" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YM1-T2-DXJ"/>
+                                    <constraint firstAttribute="width" constant="50" id="d9s-fE-H3Y"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.2666666667" green="0.62352941179999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="plusColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sGn-FC-Lqj" firstAttribute="centerX" secondItem="4FO-v1-w6u" secondAttribute="centerX" id="17w-UC-AA1"/>
+                            <constraint firstItem="sGn-FC-Lqj" firstAttribute="top" secondItem="CyM-VZ-OF0" secondAttribute="top" constant="10" id="6qB-TT-OCW"/>
+                            <constraint firstItem="XiX-2K-dmL" firstAttribute="leading" secondItem="CyM-VZ-OF0" secondAttribute="leading" constant="10" id="87n-XY-YwX"/>
+                            <constraint firstItem="CyM-VZ-OF0" firstAttribute="bottom" secondItem="EbP-7K-1PJ" secondAttribute="bottom" constant="20" id="L0A-e8-g9A"/>
+                            <constraint firstItem="CyM-VZ-OF0" firstAttribute="bottom" secondItem="XiX-2K-dmL" secondAttribute="bottom" id="S3B-LN-dVg"/>
+                            <constraint firstItem="XiX-2K-dmL" firstAttribute="top" secondItem="sGn-FC-Lqj" secondAttribute="bottom" constant="20" id="To9-gp-S31"/>
+                            <constraint firstItem="CyM-VZ-OF0" firstAttribute="trailing" secondItem="EbP-7K-1PJ" secondAttribute="trailing" constant="20" id="Zvv-mp-C9q"/>
+                            <constraint firstItem="CyM-VZ-OF0" firstAttribute="trailing" secondItem="XiX-2K-dmL" secondAttribute="trailing" constant="10" id="gsT-rJ-bcp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CyM-VZ-OF0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RHf-Tc-SFQ"/>
+                    <connections>
+                        <outlet property="buttonFloat" destination="EbP-7K-1PJ" id="Qbi-R7-qM6"/>
+                        <outlet property="segmentChecklist" destination="sGn-FC-Lqj" id="n1J-Ck-f92"/>
+                        <outlet property="viewContent" destination="XiX-2K-dmL" id="dX1-ae-Giw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uft-sB-LeT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1620" y="615.74212893553226"/>
+        </scene>
+    </scenes>
+</document>
